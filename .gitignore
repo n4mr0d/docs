@@ -6,3 +6,4 @@ node_modules
 dist
 .astro
 src/env.d.ts
+git-credentials.txt
