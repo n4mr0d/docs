@@ -37,6 +37,20 @@
       <a href="tel:+213670314785">+213 670 31 47 85</a>
       <p class="aside-card__address">Cyber Parc Sidi Abdallah, Algeris</p>
     </div>
+    <div class="aside-card aside-card--map">
+      <h3>Visit us</h3>
+      <div class="map-container">
+        <div class="map-frame">
+          <iframe
+            title="Map showing the Cyber Parc Sidi Abdallah location"
+            src="https://maps.google.com/maps?q=Cyber%20Parc%20Sidi%20Abdallah&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
   </aside>
 </section>
 
@@ -95,6 +109,37 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 2rem;
     box-shadow: var(--shadow-sm);
+  }
+
+  .aside-card--map {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .aside-card--map h3 {
+    padding: 1.8rem 2rem 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .map-container {
+    padding: 0 2rem 2rem;
+  }
+
+  .map-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 62%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .map-frame iframe {
+    border: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .aside-card h3 {
