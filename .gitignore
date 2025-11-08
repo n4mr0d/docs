@@ -3,4 +3,6 @@ node_modules
 .env
 
 # Astro build output
-.dist
+dist
+.astro
+src/env.d.ts
