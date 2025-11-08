@@ -1,0 +1,189 @@
+---
+const links = [
+  { label: 'Services', href: '#services' },
+  { label: 'Expertise', href: '#expertise' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' }
+];
+---
+<header class="navbar">
+  <nav>
+    <a class="brand" href="#top" aria-label="DProdz home">
+      <img src="https://dprodz.com/wp-content/uploads/2024/11/dpro-Logo-04.svg" alt="DProdz logo" />
+      <span>DProdz</span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-links">
+      {links.map((link) => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+    </ul>
+    <a class="cta" href="#contact">Start a project</a>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(16px);
+    background: rgba(5, 11, 22, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  nav {
+    width: min(100% - 3rem, var(--max-width));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.2rem 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .brand img {
+    width: 44px;
+    height: auto;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul a {
+    color: var(--color-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+  }
+
+  ul a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  ul a:hover::after,
+  ul a:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .cta {
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(255, 138, 0, 0.2));
+    border: 1px solid rgba(0, 212, 255, 0.45);
+    font-weight: 600;
+    transition: transform 0.3s ease, border 0.3s ease;
+  }
+
+  .cta:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 138, 0, 0.55);
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  @media (max-width: 840px) {
+    nav {
+      width: min(100% - 2rem, var(--max-width));
+    }
+
+    ul {
+      position: absolute;
+      top: 100%;
+      right: 1.5rem;
+      flex-direction: column;
+      background: rgba(5, 11, 22, 0.95);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .menu-open ul {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(12px);
+    }
+
+    .menu-open .menu-toggle span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-open .menu-toggle span:nth-child(2) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .cta {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.currentScript.closest('.navbar');
+  const button = nav.querySelector('.menu-toggle');
+  const list = nav.querySelector('ul');
+
+  const toggleMenu = () => {
+    const open = nav.classList.toggle('menu-open');
+    button.setAttribute('aria-expanded', String(open));
+  };
+
+  button?.addEventListener('click', toggleMenu);
+  list?.querySelectorAll('a').forEach((link) =>
+    link.addEventListener('click', () => {
+      nav.classList.remove('menu-open');
+      button.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>
