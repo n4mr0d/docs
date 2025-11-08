@@ -1,0 +1,93 @@
+<section class="contact-map" aria-labelledby="contact-map-heading">
+  <div class="contact-map__info">
+    <p class="badge">Visit us</p>
+    <h2 id="contact-map-heading" class="section-title">Find us at Cyber Parc Sidi Abdallah</h2>
+    <p class="section-subtitle">
+      We are located in the heart of Cyber Parc Sidi Abdallah in Algiers. Drop by for a conversation or reach out directly using
+      the contact details below.
+    </p>
+    <div class="contact-map__details">
+      <p>
+        <strong>Address:</strong>
+        <span>Cyber Parc Sidi Abdallah, Algeris</span>
+      </p>
+      <p>
+        <strong>Mobile:</strong>
+        <a href="tel:+213670314785">+213 670 31 47 85</a>
+      </p>
+    </div>
+  </div>
+  <div class="contact-map__embed" role="presentation" aria-hidden="true">
+    <iframe
+      title="Map showing Cyber Parc Sidi Abdallah in Algiers"
+      src="https://maps.google.com/maps?q=Cyber%20Parc%20Sidi%20Abdallah%2C%20Algeris&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<style>
+  .contact-map {
+    margin-top: clamp(4rem, 8vw, 6rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: stretch;
+  }
+
+  .contact-map__info {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .contact-map__details {
+    display: grid;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contact-map__details p {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .contact-map__details strong {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-map__details a {
+    color: inherit;
+    font-weight: 600;
+  }
+
+  .contact-map__details a:hover {
+    color: var(--color-primary);
+  }
+
+  .contact-map__embed {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    min-height: 320px;
+  }
+
+  .contact-map__embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(20%);
+  }
+</style>
