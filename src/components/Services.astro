@@ -1,0 +1,128 @@
+---
+const services = [
+  {
+    title: 'SEO Services',
+    tagline: 'Drive Organic Growth and Dominate Search Rankings',
+    description:
+      'Technical audits, semantic content, and conversion-centric experiences engineered to rank and retain audiences.',
+    highlights: ['Full-funnel keyword strategy', 'Structured data & Core Web Vitals tuning', 'Analytics-driven experimentation']
+  },
+  {
+    title: 'Cybersecurity Services',
+    tagline: 'Protect What Matters Most.',
+    description:
+      'Offensive and defensive security programs including penetration testing, SOC readiness, and zero-trust deployments.',
+    highlights: ['24/7 monitoring & incident response', 'ISO-aligned security frameworks', 'Threat modeling & compliance support']
+  },
+  {
+    title: 'Graphic Design Services',
+    tagline: 'Crafting Identities That Inspire',
+    description:
+      'Strategic branding, immersive product design, and powerful storytelling visuals that elevate perception.',
+    highlights: ['Complete brand systems', 'Product & marketing design', 'Motion, 3D, and interactive assets']
+  },
+  {
+    title: 'Web Development Services',
+    tagline: 'Build Your Digital Future',
+    description:
+      'Composable architectures and resilient front-to-back engineering using modern frameworks and cloud-native stacks.',
+    highlights: ['High-performance web apps', 'API engineering & integrations', 'DevOps automation & observability']
+  },
+  {
+    title: 'Web Hosting Services',
+    tagline: 'Reliable, Secure, and Lightning-Fast',
+    description:
+      'Managed infrastructure optimized for speed, redundancy, and transparent scalability with localized support.',
+    highlights: ['Global CDN acceleration', '99.99% uptime SLAs', 'Proactive patching & backups']
+  },
+  {
+    title: 'IT Consultancy Services',
+    tagline: 'Empowering Your Business with Tailored Tech Solutions',
+    description:
+      'Senior strategists guiding transformation, cloud adoption, and governance that align technology with impact.',
+    highlights: ['Digital transformation roadmaps', 'Cloud migration blueprints', 'Team enablement & training']
+  }
+];
+---
+<section id="services" class="services">
+  <header>
+    <p class="badge">Services</p>
+    <h2 class="section-title">Solutions engineered for growth and resilience</h2>
+    <p class="section-subtitle">
+      We architect cohesive ecosystems that blend performance marketing, secure infrastructure, and purposeful design to scale
+      your brand sustainably.
+    </p>
+  </header>
+  <div class="grid">
+    {services.map((service) => (
+      <article class="card service-card">
+        <div class="card__header">
+          <h3>{service.title}</h3>
+          <span>{service.tagline}</span>
+        </div>
+        <p>{service.description}</p>
+        <ul>
+          {service.highlights.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: clamp(4.5rem, 6vw, 6rem) 0;
+  }
+
+  header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .service-card {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .card__header {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .card__header span {
+    color: var(--color-primary);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  li {
+    color: var(--color-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 0.35rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  }
+</style>

@@ -1,0 +1,77 @@
+<section id="about" class="about">
+  <div class="about__media">
+    <div class="frame">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Team collaborating" />
+      <span>Born in Algeria, building for the world.</span>
+    </div>
+  </div>
+  <div class="about__content">
+    <p class="badge">About us</p>
+    <h2 class="section-title">Your long-term innovation ally</h2>
+    <p class="section-subtitle">
+      DProdz was founded in Algiers with a mission to empower ambitious organisations through technology craftsmanship and
+      measurable outcomes.
+    </p>
+    <div class="about__grid">
+      <article>
+        <h3>Embedded partnership</h3>
+        <p>We integrate with your teams, workflows, and culture to co-create products and campaigns that stand out.</p>
+      </article>
+      <article>
+        <h3>Global mindset</h3>
+        <p>Our remote-friendly operating model means we support Algerian leaders and global teams around the clock.</p>
+      </article>
+      <article>
+        <h3>Outcome tracking</h3>
+        <p>Dashboards, growth loops, and security scoring keep leadership aligned and informed at every milestone.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    display: grid;
+    gap: clamp(3rem, 6vw, 5rem);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: center;
+    padding: clamp(4rem, 6vw, 6rem) 0;
+  }
+
+  .frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .frame span {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: rgba(5, 11, 22, 0.85);
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .about__grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .about__grid article {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.6rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .about__grid p {
+    color: var(--color-muted);
+    margin: 0.4rem 0 0;
+  }
+</style>

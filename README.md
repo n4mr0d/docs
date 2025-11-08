@@ -1,33 +1,55 @@
-# Mintlify Starter Kit
+# DProdz Marketing Site
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+Modern marketing website for **DProdz**, an Algerian digital innovation company. Built with [Astro](https://astro.build/) and
+a handcrafted component system to highlight each service offering.
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+## Getting Started
 
-### Development
+1. Install dependencies (requires Node 18+):
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+   ```bash
+   npm install
+   ```
+
+2. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+
+   ```bash
+   npm run build
+   ```
+
+4. Preview the production build locally:
+
+   ```bash
+   npm run preview
+   ```
+
+## Project Structure
 
 ```
-npm i -g mintlify
+├── public/               # Static assets
+├── src/
+│   ├── components/       # UI components for each section
+│   ├── layouts/          # Base layout wrapping every page
+│   ├── pages/            # Astro pages (entry points)
+│   └── styles/           # Global styling
+├── astro.config.mjs      # Astro configuration
+├── package.json          # Scripts and dependencies
+└── tsconfig.json         # TypeScript settings
 ```
 
-Run the following command at the root of your documentation (where mint.json is)
+## Customisation
 
-```
-mintlify dev
-```
+- Update content inside `src/components` to adjust copy or imagery.
+- Replace image URLs with local assets by adding files under `public/`.
+- Modify theme colors and spacing within `src/styles/global.css`.
 
-### Publishing Changes
+## Deployment
 
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
-
-#### Troubleshooting
-
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `mint.json`
-- test
+The site can be deployed to any static host that supports Astro builds, such as Vercel, Netlify, GitHub Pages, or a custom
+hosting provider.

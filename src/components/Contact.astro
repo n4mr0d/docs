@@ -1,0 +1,134 @@
+<section id="contact" class="contact">
+  <div class="contact__content">
+    <p class="badge">Let's build</p>
+    <h2 class="section-title">Ready to elevate your next launch?</h2>
+    <p class="section-subtitle">
+      Share your challenge and we will assemble a dedicated squad covering strategy, design, engineering, and security within
+      48 hours.
+    </p>
+    <form>
+      <label>
+        <span>Full name</span>
+        <input type="text" name="name" placeholder="Amine B." required />
+      </label>
+      <label>
+        <span>Work email</span>
+        <input type="email" name="email" placeholder="you@company.com" required />
+      </label>
+      <label>
+        <span>How can we help?</span>
+        <textarea name="message" rows="4" placeholder="Tell us about your goals, timelines, and expectations." required></textarea>
+      </label>
+      <button class="button button-primary" type="submit">Request consultation</button>
+    </form>
+  </div>
+  <aside class="contact__aside">
+    <div class="aside-card">
+      <h3>What to expect</h3>
+      <ul>
+        <li>Discovery call with senior consultants</li>
+        <li>Tailored roadmap & investment estimate</li>
+        <li>Complimentary SEO or security audit</li>
+      </ul>
+    </div>
+    <div class="aside-card">
+      <h3>Prefer direct contact?</h3>
+      <a href="mailto:hello@dprodz.com">hello@dprodz.com</a>
+      <a href="tel:+213555000000">+213 555 00 00 00</a>
+    </div>
+  </aside>
+</section>
+
+<style>
+  .contact {
+    display: grid;
+    gap: clamp(3rem, 6vw, 5rem);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    align-items: start;
+    padding: clamp(4rem, 6vw, 6.5rem) 0 clamp(5rem, 8vw, 7rem);
+  }
+
+  form {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.3rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.55rem;
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(5, 11, 22, 0.75);
+    color: var(--color-text);
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .contact__aside {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .aside-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .aside-card h3 {
+    margin-top: 0;
+  }
+
+  .aside-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .aside-card li {
+    color: var(--color-muted);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .aside-card li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+  }
+
+  .aside-card a {
+    display: block;
+    color: var(--color-text);
+    margin-top: 0.4rem;
+    font-weight: 600;
+  }
+
+  .aside-card a:hover {
+    color: var(--color-primary);
+  }
+</style>
